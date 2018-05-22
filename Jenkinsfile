@@ -13,3 +13,5 @@ node {
 
         app = docker.build("Myproject")
     }
+
+}
