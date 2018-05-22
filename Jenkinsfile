@@ -2,15 +2,15 @@ pipeline {
    agent {
 	dockerfile true
    }
- 
 
-   stages {
-	stage('Build') {
-		 
-		  app =  docker.build("reuelreddy/Myproject")
-		}
-	    
-	stage('Test') {
+	stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+
+        app = docker.build("reuelreddy/Myproject")
+        }
+
+ 	stage('Test') {
 		steps {
 			echo 'testing....'
 		}
@@ -22,4 +22,4 @@ pipeline {
 	   }
 
 	}
-}
+
